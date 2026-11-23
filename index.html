@@ -1,1 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automatic Newspaper & Media Title Verification</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background-blob blob-one"></div>
+  <div class="background-blob blob-two"></div>
 
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">TV</div>
+      <div>
+        <h1>TitleVerify</h1>
+        <p>Newspaper & Media Title Verification</p>
+      </div>
+    </div>
+
+    <div class="status-pill">
+      <span class="status-dot"></span>
+      System Online
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <div class="hero-text">
+        <span class="eyebrow">SMART MEDIA VERIFICATION</span>
+        <h2>Check a proposed media title <span>before registration.</span></h2>
+        <p>
+          This demo compares a proposed title with sample registered titles
+          using spelling similarity, sound similarity and a weighted score.
+        </p>
+
+        <div class="stats">
+          <div class="stat-card">
+            <strong>80%+</strong>
+            <span>Proceed</span>
+          </div>
+          <div class="stat-card">
+            <strong>60–79%</strong>
+            <span>Under Review</span>
+          </div>
+          <div class="stat-card">
+            <strong>&lt;60%</strong>
+            <span>Reject</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card checker-card">
+        <div class="card-heading">
+          <div>
+            <span class="small-label">LIVE DEMO</span>
+            <h3>Verify a Title</h3>
+          </div>
+          <div class="shield">✓</div>
+        </div>
+
+        <label for="titleInput">Proposed newspaper / media title</label>
+        <div class="input-row">
+          <input id="titleInput" type="text" placeholder="Example: Daily Sun News" />
+          <button id="verifyBtn">Verify</button>
+        </div>
+
+        <div class="examples">
+          <span>Try:</span>
+          <button class="example-btn">Daily Sun</button>
+          <button class="example-btn">Metro Voice</button>
+          <button class="example-btn">Future Media</button>
+        </div>
+
+        <div id="resultBox" class="result-box hidden">
+          <div class="result-top">
+            <div>
+              <span class="small-label">RESULT</span>
+              <h3 id="resultText">Proceed</h3>
+            </div>
+            <div id="scoreCircle" class="score-circle">82%</div>
+          </div>
+
+          <div class="meter">
+            <div id="meterFill" class="meter-fill"></div>
+          </div>
+
+          <div class="result-details">
+            <div>
+              <span>Closest registered title</span>
+              <strong id="closestTitle">Daily Sun</strong>
+            </div>
+            <div>
+              <span>Normalized input</span>
+              <strong id="normalizedText">dailysunnews</strong>
+            </div>
+          </div>
+
+          <p id="reasonText" class="reason"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <span class="eyebrow">HOW IT WORKS
