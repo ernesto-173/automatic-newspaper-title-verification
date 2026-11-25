@@ -41,7 +41,7 @@
         <div class="stats">
           <div class="stat-card">
             <strong>80%+</strong>
-            <span>Proceed</span>
+            <span>Reject (Duplicate)</span>
           </div>
           <div class="stat-card">
             <strong>60–79%</strong>
@@ -49,7 +49,7 @@
           </div>
           <div class="stat-card">
             <strong>&lt;60%</strong>
-            <span>Reject</span>
+            <span>Proceed (Unique)</span>
           </div>
         </div>
       </div>
@@ -80,7 +80,7 @@
           <div class="result-top">
             <div>
               <span class="small-label">RESULT</span>
-              <h3 id="resultText">Proceed</h3>
+              <h3 id="resultText">Reject</h3>
             </div>
             <div id="scoreCircle" class="score-circle">82%</div>
           </div>
@@ -107,4 +107,123 @@
 
     <section class="section">
       <div class="section-title">
-        <span class="eyebrow">HOW IT WORKS
+        <span class="eyebrow">HOW IT WORKS</span>
+        <h2>Verification Algorithm</h2>
+        <p>The frontend visualizes the exact project flow in simple steps.</p>
+      </div>
+
+      <div class="steps-grid">
+        <article class="step-card">
+          <div class="step-number">01</div>
+          <div class="step-icon">⌨</div>
+          <h3>Receive Title</h3>
+          <p>User enters the proposed newspaper or media title.</p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">02</div>
+          <div class="step-icon">Aa</div>
+          <h3>Normalize</h3>
+          <p>Convert to lowercase and remove spaces and symbols.</p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">03</div>
+          <div class="step-icon">⌕</div>
+          <h3>Find Similar Titles</h3>
+          <p>Search registered titles and find the closest candidates.</p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">04</div>
+          <div class="step-icon">♫</div>
+          <h3>Phonetic Check</h3>
+          <p>Compare how titles sound using phonetic representation.</p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">05</div>
+          <div class="step-icon">%</div>
+          <h3>Similarity Score</h3>
+          <p>Calculate spelling similarity and weighted overall score.</p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">06</div>
+          <div class="step-icon">✓</div>
+          <h3>Decision</h3>
+          <p>Display Reject, Under Review, or Proceed based on the similarity score.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section two-column">
+      <div class="glass-card formula-card">
+        <span class="eyebrow">SCORING</span>
+        <h2>Weighted Similarity</h2>
+        <div class="formula">
+          Total Score = <b>0.4 × Levenshtein</b> + <b>0.6 × Jaro-Winkler</b>
+        </div>
+        <p>
+          The project gives more weight to Jaro-Winkler similarity while still
+          using Levenshtein similarity to measure character-level differences.
+        </p>
+
+        <div class="legend">
+          <div><span class="legend-dot reject"></span><b>80%+</b> Reject (Too similar to existing title)</div>
+          <div><span class="legend-dot review"></span><b>60–79%</b> Under Review (Moderate similarity)</div>
+          <div><span class="legend-dot proceed"></span><b>Below 60%</b> Proceed (Unique title)</div>
+        </div>
+      </div>
+
+      <div class="glass-card database-card">
+        <span class="eyebrow">DEMO DATABASE</span>
+        <h2>Sample Registered Titles</h2>
+        <div id="titleList" class="title-list"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <span class="eyebrow">PROCESS</span>
+        <h2>Verification Flow</h2>
+      </div>
+
+      <div class="flow">
+        <div class="flow-item">Start</div>
+        <div class="arrow">→</div>
+        <div class="flow-item">Enter Title</div>
+        <div class="arrow">→</div>
+        <div class="flow-item">Normalize</div>
+        <div class="arrow">→</div>
+        <div class="flow-item">Compare</div>
+        <div class="arrow">→</div>
+        <div class="flow-item accent">Score</div>
+        <div class="arrow">→</div>
+        <div class="flow-item">Decision</div>
+      </div>
+    </section>
+
+    <section class="presentation-tip">
+      <div>
+        <span class="eyebrow">PROFESSOR DEMO TIP</span>
+        <h2>Explain it in one sentence</h2>
+        <p>
+          “The system takes a proposed media title, cleans it, compares it with
+          registered titles, calculates similarity, and gives a decision based
+          on the final percentage.”
+        </p>
+      </div>
+      <div class="mini-flow">
+        <span>Input</span><b>→</b><span>Compare</span><b>→</b><span>Score</span><b>→</b><span>Decision</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Automatic Newspaper & Media Title Verification System · Frontend Demonstration
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
